@@ -1,0 +1,50 @@
+model:
+  id: Qwen/Qwen2.5-3B-Instruct
+
+dataset:
+  path: data/synthetic_preferences.jsonl
+
+output:
+  adapter_dir: outputs/dpo-adapter
+  metrics_path: reports/dpo_train_metrics.json
+
+training:
+  beta: 0.1
+  learning_rate: 0.00001
+  num_train_epochs: 1
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 4
+  max_length: 512
+  max_prompt_length: 256
+  max_completion_length: 256
+  fp16: true
+
+lora:
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+
+quantization:
+  load_in_4bit: true
+
+constitutional_ai:
+  input_path: data/preferences.jsonl
+  output_path: data/synthetic_preferences.jsonl
+  trace_path: reports/constitutional_traces.jsonl
+  max_prompts: 4
+
+guardrails:
+  block_prompt_injection: true
+  block_unsafe_requests: true
+  validate_outputs: true
+
+evaluation:
+  input_path: data/evaluation.jsonl
+  output_path: reports/alignment_evaluation.json
+  markdown_path: reports/alignment_evaluation.md
+  max_new_tokens: 128
