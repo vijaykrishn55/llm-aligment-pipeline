@@ -1,4 +1,3 @@
-
 # LLM Alignment & Preference Tuning Pipeline
 
 An end-to-end LLM alignment project covering preference dataset engineering, Direct Preference Optimization (DPO), Constitutional AI (RLAIF), runtime guardrails, and alignment evaluation.
@@ -233,23 +232,3 @@ These artifacts are produced by their respective workflows; their presence depen
 - Compare results across multiple seeds and checkpoints.
 - Improve judge calibration and reproducibility.
 - Add deployment monitoring and model-version tracking.
-
-## Assessment Deliverables
-
-The final submission should include:
-
-- Public GitHub repository.
-- Validated preference dataset.
-- DPO training logs and saved adapter.
-- Constitutional AI generation traces.
-- Guardrail test results.
-- Base-versus-aligned evaluation report.
-- Automated test results.
-- Demonstration video.
-- Screenshots of training, checkpoints, and guardrail execution.
-
-Training metrics, model improvements, and safety results must reflect actual runs. They should not be reported as successful until verified.
-
-## License and Responsible Use
-
-Use datasets and model checkpoints in accordance with their applicable licenses. Do not commit API keys, private credentials, or sensitive data. Evaluate safety behavior before deploying any aligned model in a user-facing application.
