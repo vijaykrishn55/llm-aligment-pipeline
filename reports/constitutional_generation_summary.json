@@ -1,0 +1,12 @@
+{
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "source_prompts": 16,
+  "constitutional_traces_generated": 16,
+  "usable_pairs_before_length_filter": 15,
+  "length_filtered": 4,
+  "retained_preference_pairs": 11,
+  "invalid": 0,
+  "duplicates": 0,
+  "status": "Generation succeeded, but the raw synthetic_preferences.jsonl and constitutional_traces.jsonl from this run were lost after a Kaggle session restart. The 11-pair dataset was not used for retraining.",
+  "source_of_counts": "Kaggle run log supplied in conversation on 2026-10-16."
+}
